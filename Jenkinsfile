@@ -14,9 +14,10 @@ pipeline {
                 sh 'npm install'
             }
         }
-        stage(’Deploy for master’) {
+	stage('Deliver') {
             steps {
-                sh ’npm start’
+                sh './jenkins/scripts/deliver.sh'
+                input message: 'Finished using the web site? (Click "Proceed" to continue)'
             }
         }
     }
