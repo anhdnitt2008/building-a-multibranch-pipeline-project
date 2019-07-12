@@ -14,7 +14,7 @@ pipeline {
                 sh 'npm install'
             }
         }
-        stage(’Start NPM’) {
+        stage(’Deploy for master’) {
             steps {
                 sh ’npm start’
             }
